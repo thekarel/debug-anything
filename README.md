@@ -1,4 +1,4 @@
-# CODE EXAMPLES
+# DEBUG ANYTHING
 
-> Snippets, apps, code examples used on https://charlesagile.com
+> Code for the Debug Anything series on https://charlesagile.com
 

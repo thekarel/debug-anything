@@ -5,12 +5,25 @@ const hostname = '127.0.0.1';
 const port = 3456;
 const serverUrl = `http://${hostname}:${port}`
 
-const server = http.createServer((req, res) => {
+const getNameFromReq = (req) => {
   const {name} = url.parse(req.url, true).query;
+
+  return name
+}
+
+const getGreeting = (name) => {
+  const greeting = `Hello, ${name}!`
+
+  return greeting
+}
+
+const server = http.createServer((req, res) => {
+  const name = getNameFromReq(req)
+  const greeting = getGreeting(name)
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end(`Hello, ${name}!\n`);
+  res.end(`${greeting}\n`);
 });
 
 server.listen(port, hostname, () => {

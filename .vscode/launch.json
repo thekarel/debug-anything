@@ -7,6 +7,20 @@
         {
             "type": "chrome",
             "request": "launch",
+            "name": "Debug React, TS, Parcel app in Chrome",
+            "url": "http://localhost:1234/",
+            "webRoot": "${workspaceFolder}/parcel",
+            "pathMapping": {
+                "__parcel_source_root": "${workspaceFolder}/parcel"
+            },
+              "skipFiles": [
+                "${workspaceFolder}/parcel/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
             "name": "Debug CRA web app in Chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}/react-cra"
